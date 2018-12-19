@@ -1,0 +1,1 @@
+export { ImageGridContainer as ImageGrid } from './container';
