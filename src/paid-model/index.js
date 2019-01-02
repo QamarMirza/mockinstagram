@@ -26,7 +26,7 @@ export const PaidModal = ({ isOpen, onRequestClose, modalPicture }: Props) => {
       </div>
 
       <img
-        src={modalPicture.picture}
+        src={modalPicture.images.low_resolution.url}
         alt=""
         className={'modal-picture'}
       />

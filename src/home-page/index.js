@@ -6,11 +6,7 @@ import { connect } from 'react-redux';
 
 import './styles.css';
 
-export const HomePageComponent = ({ getProfile, setToken }) => {
-
-  const TryAgain = () => {
-    alert('tryagain');
-  };
+export const HomePageComponent = ({ getProfile, setToken }: any) => {
 
   const submit = (payload) => {
     setToken(payload);

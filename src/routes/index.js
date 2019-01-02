@@ -1,14 +1,12 @@
 import * as React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { HomePage } from '../home-page';
 import { App } from '../App';
 import { connect } from 'react-redux'
+import { PrivateRouteComponent } from './utils';
+import { Profile } from '../profile';
 
-const Profile = () => (
-  <div>
-    Profile Page :)
-  </div>
-);
+
 
 const mapStateToProps = (state) => {
   return {
@@ -16,15 +14,7 @@ const mapStateToProps = (state) => {
   };
 }
 
-const PrivateRouteComponent = ({ Component, isAuth, redirect, ...other }) => {
-  console.log(isAuth);
-  return (
-    <Route {...other} render={(props) => (
-      isAuth === true
-        ? <Component {...props} />
-        : <Redirect to={redirect} />
-    )} />)
-}
+
 
 
 export const PrivateRoute = connect(mapStateToProps, null)(PrivateRouteComponent);

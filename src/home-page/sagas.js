@@ -19,11 +19,12 @@ export function* checkAuth(): Saga<void> {
     const response: { data: any } = yield call(getSelf, token);
     yield put(auth);
 
-    yield* put(getProfile.success(response.data)); console.log('fghjkl')
+    yield put(getProfile.success(response.data));
     yield put(push('/app'));
+    //yield call(createBrowserHistory().push, '/app');
+
   } catch (error) {
     yield put(getProfile.failure(error));
-    console.log('ghjk')
 
   }
 
